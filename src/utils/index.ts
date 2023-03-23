@@ -4,10 +4,10 @@ export const addLocalStorage = (key:string,data:any)=>{
 }
 export const getLocalStorage = (key:string)=>{
     const dataStr = localStorage.getItem(key)
-    if(dataStr){
-        return JSON.parse(dataStr)
+    if(!dataStr || dataStr === 'undefined'){
+        return undefined
     }
-    return dataStr
+    return JSON.parse(dataStr)
 }
 export const removeLocalStorage = (key:string)=>{
     localStorage.removeItem(key)
@@ -18,10 +18,10 @@ export const addSessionStorage = (key:string,data:any)=>{
 }
 export const getSessionStorage = (key:string)=>{
     const dataStr = sessionStorage.getItem(key)
-    if(dataStr){
-        return JSON.parse(dataStr)
+    if(!dataStr || dataStr === 'undefined'){
+        return undefined
     }
-    return dataStr
+    return JSON.parse(dataStr)
 }
 export const removeSessionStorage = (key:string)=>{
     sessionStorage.removeItem(key)
