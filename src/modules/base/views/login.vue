@@ -45,6 +45,7 @@ const submitForm = async (formEl:FormInstance | undefined)=>{
         if(valid){
             console.log('submit!')
             login(formData).then(res=>{
+                console.log("Res",res.token)
                 addLocalStorage('token',res.token)
                 router.push({
                     path: "/"

@@ -17,7 +17,7 @@ const routes: RouteRecordRaw[] = [
 	{
 		path: "/",
 		name: "layout",
-		component: ()=> import ("../layout/index.vue"),
+		component: ()=> import ("../modules/base/layout/index.vue"),
 		children: [
 			// {
 			// 	path: "",

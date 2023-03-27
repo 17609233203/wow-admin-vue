@@ -15,9 +15,9 @@ axios.interceptors.request.use(config=>{
 // 响应拦截
 axios.interceptors.response.use(res=>{
      if(res.status === 200){
-        return Promise.resolve(res)
+        return Promise.resolve(res.data)
      }else{
-        return Promise.reject(res)
+        return Promise.reject(res.data)
      }
 },err=>{
     if(err.response.status){
